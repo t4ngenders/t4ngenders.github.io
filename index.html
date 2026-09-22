@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arjebn | 8b8t</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0a0a;
+            color: #f0f0f0;
+            line-height: 1.65;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #e63946, 0 0 25px #e6394640; }
+            50% { text-shadow: 0 0 18px #e63946, 0 0 40px #e6394680; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            z-index: 100;
+            background: #141414;
+            border: 2px solid #e63946;
+            border-radius: 30px;
+            padding: 8px 18px;
+            font-weight: 800;
+            font-size: 15px;
+            cursor: pointer;
+            color: #e63946;
+            transition: all 0.3s ease;
+            user-select: none;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .lang-switch:hover {
+            background: #e63946;
+            color: #0a0a0a;
+            box-shadow: 0 0 22px #e6394680;
+        }
+
+        header {
+            background: linear-gradient(160deg, #1a0505 0%, #0a0a0a 70%);
+            padding: 75px 20px 60px;
+            text-align: center;
+            border-bottom: 4px solid #e63946;
+        }
+
+        .server-logo {
+            display: inline-block;
+            font-size: 1.15rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #e63946;
+            background: #1a1a1a;
+            padding: 7px 20px;
+            border-radius: 6px;
+            border: 2px solid #e63946;
+            margin-bottom: 28px;
+            animation: fadeInUp 0.7s ease both, pulse 3s ease-in-out infinite;
+            text-transform: uppercase;
+        }
+
+        header h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: #e63946;
+            letter-spacing: -1.5px;
+            text-transform: uppercase;
+            animation: fadeInUp 0.8s ease both, glow 3s ease-in-out infinite;
+        }
+
+        header .tag {
+            margin-top: 16px;
+            color: #aaa;
+            font-size: 1.25rem;
+            font-weight: 500;
+            animation: fadeInUp 1s ease both;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 50px 20px 80px;
+        }
+
+        .card {
+            background: #131313;
+            border-radius: 14px;
+            padding: 32px 30px;
+            margin-bottom: 26px;
+            border-left: 5px solid #e63946;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+            animation: fadeInUp 0.8s ease both;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(230, 57, 70, 0.18);
+        }
+
+        .card h2 {
+            color: #e63946;
+            font-size: 1.55rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .card p {
+            color: #e0e0e0;
+            font-size: 1.18rem;
+            margin-bottom: 14px;
+        }
+
+        .highlight {
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px 18px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            border: 1px solid #333;
+            transition: all 0.25s ease;
+        }
+
+        .social-links a:hover {
+            background: #e63946;
+            color: #fff;
+            border-color: #e63946;
+            transform: translateX(6px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #555;
+            font-size: 1rem;
+            border-top: 1px solid #1f1f1f;
+            animation: fadeInUp 1.1s ease both;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.9rem; }
+            .card { padding: 26px 22px; }
+            .card h2 { font-size: 1.4rem; }
+            .card p { font-size: 1.12rem; }
+            .server-logo { font-size: 1rem; padding: 6px 16px; }
+        }
+
+        .lang-en { display: none; }
+        body.en .lang-es { display: none; }
+        body.en .lang-en { display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="lang-switch" onclick="toggleLanguage()">
+        <span class="lang-es">EN</span>
+        <span class="lang-en">ES</span>
+    </div>
+
+    <header>
+        <div class="server-logo">8b8t.me</div>
+        <h1>arjebn</h1>
+        <div class="tag">
+            <span class="lang-es">Jugador casual y activo en 8b8t.me</span>
+            <span class="lang-en">Casual & active player on 8b8t.me</span>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Sobre mí -->
+        <div class="card">
+            <h2>
+                <span class="lang-es">Sobre mí</span>
+                <span class="lang-en">About me</span>
+            </h2>
+            <p class="lang-es">
+                Soy un jugador <span class="highlight">casual pero muy activo</span> en el servidor anárquico 
+                <span class="highlight">8b8t.me</span>. Llevo más de <span class="highlight">400 horas</span> 
+                explorando, construyendo y ayudando a otros jugadores en este mundo caótico.
+            </p>
+            <p class="lang-es">
+                No me considero un jugador hardcore de PvP ni un constructor profesional de bases gigantes, 
+                pero disfruto mucho del día a día del servidor: encontrar gente nueva, compartir recursos 
+                y formar parte de la comunidad.
+            </p>
+            <p class="lang-es">
+                Mi forma de jugar es bastante relajada. Me gusta estar en el servidor, 
+                charlar, entregar kits y ver cómo los jugadores nuevos van aprendiendo 
+                a sobrevivir en un lugar donde no hay reglas.
+            </p>
+
+            <p class="lang-en">
+                I'm a <span class="highlight">casual but very active</span> player on the anarchy server 
+                <span class="highlight">8b8t.me</span>. I have more than <span class="highlight">400 hours</span> 
+                exploring, building and helping other players in this chaotic world.
+            </p>
+            <p class="lang-en">
+                I don't consider myself a hardcore PvP player or a professional base builder, 
+                but I really enjoy the daily life of the server: meeting new people, sharing resources 
+                and being part of the community.
+            </p>
+            <p class="lang-en">
+                My way of playing is quite relaxed. I like being on the server, 
+                chatting, giving kits and watching how new players learn 
+                to survive in a place where there are no rules.
+            </p>
+        </div>
+
+        <!-- Mi actividad -->
+        <div class="card">
+            <h2>
+                <span class="lang-es">Mi actividad</span>
+                <span class="lang-en">My activity</span>
+            </h2>
+            <p class="lang-es">
+                Mi proyecto más grande se llama <span class="highlight">Oreva</span>, 
+                un bot exclusivo que creé para entregar kits a mi clan 
+                <span class="highlight">Outlaws</span>.
+            </p>
+            <p class="lang-es">
+                La mayor parte del tiempo me dedico a entregar kits a los nuevos jugadores 
+                para ayudarlos a empezar en el servidor y que no mueran en los primeros minutos.
+            </p>
+
+            <p class="lang-en">
+                My biggest project is called <span class="highlight">Oreva</span>, 
+                an exclusive bot I created to deliver kits to my clan 
+                <span class="highlight">Outlaws</span>.
+            </p>
+            <p class="lang-en">
+                Most of the time I focus on giving kits to new players 
+                so they can start on the server and not die in the first few minutes.
+            </p>
+        </div>
+
+        <!-- Historia de 8b8t -->
+        <div class="card">
+            <h2>
+                <span class="lang-es">Historia de 8b8t</span>
+                <span class="lang-en">History of 8b8t</span>
+            </h2>
+            <p class="lang-es">
+                8b8t es uno de los servidores de anarquía más antiguos que siguen activos. 
+                Nació en <span class="highlight">diciembre de 2016</span> como 
+                <span class="highlight">0b0t</span>, creado por Leee.
+            </p>
+            <p class="lang-es">
+                Con el tiempo cambió de nombre a <span class="highlight">6b6t</span> y finalmente 
+                a <span class="highlight">8b8t</span>. El mapa actual se creó en 
+                <span class="highlight">agosto de 2020</span> y nunca ha sido reseteado.
+            </p>
+            <p class="lang-es">
+                Hoy en día es uno de los servidores de anarquía más grandes y con más historia, 
+                con cientos de miles de jugadores únicos que han pasado por él.
+            </p>
+
+            <p class="lang-en">
+                8b8t is one of the oldest still-active anarchy servers. 
+                It was born in <span class="highlight">December 2016</span> as 
+                <span class="highlight">0b0t</span>, created by Leee.
+            </p>
+            <p class="lang-en">
+                Over time it changed its name to <span class="highlight">6b6t</span> and finally 
+                to <span class="highlight">8b8t</span>. The current map was created in 
+                <span class="highlight">August 2020</span> and has never been reset.
+            </p>
+            <p class="lang-en">
+                Today it is one of the largest and most historic anarchy servers, 
+                with hundreds of thousands of unique players who have joined it.
+            </p>
+        </div>
+
+        <!-- ¿Por qué 8b8t es especial? -->
+        <div class="card">
+            <h2>
+                <span class="lang-es">¿Por qué 8b8t es especial?</span>
+                <span class="lang-en">Why is 8b8t special?</span>
+            </h2>
+            <p class="lang-es">
+                A diferencia de servidores como 2b2t, 8b8t permite comandos útiles como 
+                <span class="highlight">/home</span> y <span class="highlight">/tpa</span>, 
+                lo que hace la experiencia más jugable sin perder el espíritu anárquico.
+            </p>
+            <p class="lang-es">
+                Tiene una comunidad muy activa, muchos clanes, bases enormes, 
+                y un mapa que lleva más de 6 años sin reseteo. 
+                Es uno de los pocos servidores que ha logrado mantenerse estable durante tanto tiempo.
+            </p>
+
+            <p class="lang-en">
+                Unlike servers like 2b2t, 8b8t allows useful commands such as 
+                <span class="highlight">/home</span> and <span class="highlight">/tpa</span>, 
+                making the experience more playable without losing the anarchy spirit.
+            </p>
+            <p class="lang-en">
+                It has a very active community, many clans, huge bases, 
+                and a map that has been running for over 6 years without resets. 
+                It is one of the few servers that has managed to stay stable for so long.
+            </p>
+        </div>
+
+        <!-- Más sobre el servidor -->
+        <div class="card">
+            <h2>
+                <span class="lang-es">Más sobre el servidor</span>
+                <span class="lang-en">More about the server</span>
+            </h2>
+            <p class="lang-es">
+                • El servidor lleva activo desde <span class="highlight">2016</span> (casi 10 años).<br>
+                • El mapa actual supera los <span class="highlight">9 TB</span> de tamaño.<br>
+                • Ha tenido más de <span class="highlight">400.000</span> jugadores únicos.<br>
+                • Es uno de los servidores de anarquía más estables y optimizados que existen.<br>
+                • Soporta versiones desde la <span class="highlight">1.7</span> hasta las más recientes.<br>
+                • Tiene soporte tanto para Java como para Bedrock.
+            </p>
+
+            <p class="lang-en">
+                • The server has been online since <span class="highlight">2016</span> (almost 10 years).<br>
+                • The current map is over <span class="highlight">9 TB</span> in size.<br>
+                • It has had more than <span class="highlight">400,000</span> unique players.<br>
+                • It is one of the most stable and optimized anarchy servers that exist.<br>
+                • It supports versions from <span class="highlight">1.7</span> to the newest ones.<br>
+                • It has support for both Java and Bedrock.
+            </p>
+        </div>
+
+        <!-- Redes (con texto) -->
+        <div class="card">
+            <h2>
+                <span class="lang-es">Redes</span>
+                <span class="lang-en">Socials</span>
+            </h2>
+
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@t4ngens3?_r=1&_t=ZS-99w4GledkCD" target="_blank">TikTok</a>
+                <a href="https://discord.gg/zGjE4BQna" target="_blank">Discord</a>
+                <a href="https://x.com/t4ngenders" target="_blank">Twitter / X</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <span class="lang-es">Hecho por arjebn · 8b8t</span>
+        <span class="lang-en">Made by arjebn · 8b8t</span>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            document.body.classList.toggle('en');
+            localStorage.setItem('lang', document.body.classList.contains('en') ? 'en' : 'es');
+        }
+
+        if (localStorage.getItem('lang') === 'en') {
+            document.body.classList.add('en');
+        }
+    </script>
+</body>
+</html>
