@@ -169,7 +169,7 @@
             font-weight: 700;
         }
 
-        /* ===== SERVER STATUS (muy clean) ===== */
+        /* STATUS */
         .status-card {
             background: #131313;
             border-radius: 16px;
@@ -232,7 +232,6 @@
             color: #666;
         }
 
-        /* Resto de estilos */
         .ip-box {
             background: #1a1a1a;
             border: 1px solid #333;
@@ -427,7 +426,7 @@
             </div>
         </div>
 
-        <!-- ESTADO DEL SERVIDOR (muy clean) -->
+        <!-- ESTADO -->
         <div id="estado" class="section">
             <div class="status-card">
                 <div class="status-header">
@@ -530,19 +529,38 @@
             </div>
         </div>
 
-        <!-- COMANDOS -->
+        <!-- COMANDOS (COMPLETA) -->
         <div id="comandos" class="section">
             <div class="card">
-                <h2><span class="lang-es">Comandos</span><span class="lang-en">Commands</span></h2>
+                <h2>
+                    <span class="lang-es">Lista de comandos</span>
+                    <span class="lang-en">Command list</span>
+                </h2>
+                <p class="lang-es">Algunos comandos son gratis, otros requieren votar o tener rango.</p>
+                <p class="lang-en">Some commands are free, others require voting or having a rank.</p>
+
                 <table class="cmd-table">
                     <thead>
-                        <tr><th>Comando</th><th>Requisito</th></tr>
+                        <tr>
+                            <th>Comando</th>
+                            <th>Requisito</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr><td>/tpa · /home · /back</td><td><span class="badge badge-free">Free</span></td></tr>
-                        <tr><td>/cosmetics nick</td><td><span class="badge badge-both">Voto / Rank</span></td></tr>
-                        <tr><td>/echest · /rename</td><td><span class="badge badge-rank">Rank</span></td></tr>
-                        <tr><td>/hotspot create</td><td><span class="badge badge-rank">Ultra</span></td></tr>
+                        <tr><td>/tpa · /tpahere · /tpayes · /tpano · /tpacancel</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/home · /sethome · /delhome · /back</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/hotspot · /skin · /kill · /msg</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/ignore · /unignore · /ignorelist</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/joindate · /lastseen · /worldstats</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/tpsinfo · /dps · /togglechat</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/togglejoinmessage · /toggleleaderboard</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/deathmessage · /achievements</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/announcements</td><td><span class="badge badge-both">Voto / Rank</span></td></tr>
+                        <tr><td>/cosmetics nick · /cosmetics item</td><td><span class="badge badge-both">Voto / Rank</span></td></tr>
+                        <tr><td>/echest · /rename · /toggleprefix</td><td><span class="badge badge-rank">Rank</span></td></tr>
+                        <tr><td>/chatbridge</td><td><span class="badge badge-rank">Rank</span></td></tr>
+                        <tr><td>/hotspot create</td><td><span class="badge badge-rank">Ultra Rank</span></td></tr>
+                        <tr><td>/cosmetics title</td><td><span class="badge badge-rank">Custom Rank</span></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -611,7 +629,6 @@
             navigator.clipboard.writeText(ip).then(() => alert('IP copiada: ' + ip));
         }
 
-        // ===== SERVER STATUS =====
         async function updateServerStatus() {
             const dot = document.getElementById('statusDot');
             const text = document.getElementById('statusText');
@@ -644,7 +661,6 @@
             }
         }
 
-        // Cargar estado al iniciar y cada 60 segundos
         updateServerStatus();
         setInterval(updateServerStatus, 60000);
 
