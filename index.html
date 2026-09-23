@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arjebn | 8b8t</title>
+    
+    <!-- SEO -->
+    <title>arjebn | Oreva | 8b8t</title>
+    <meta name="description" content="Página oficial de arjebn, creador de Oreva (bot de kits) en 8b8t.me. Jugador activo del clan Outlaws. Información del servidor, comandos, specs y más.">
+    <meta name="keywords" content="Oreva, OrevaCORP, Orevaweb, Oreva bot, arjebn, 8b8t, 8b8t.me, Outlaws, kits 8b8t, anarchy server">
+    <meta name="author" content="arjebn">
+    <meta property="og:title" content="arjebn | Oreva | 8b8t">
+    <meta property="og:description" content="Creador de Oreva, el bot de kits del clan Outlaws en 8b8t.me">
+    <meta property="og:type" content="website">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -17,12 +22,10 @@
             color: #f0f0f0;
             line-height: 1.65;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
-        /* Animaciones */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(18px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -31,10 +34,9 @@
             50% { text-shadow: 0 0 18px #e63946, 0 0 40px #e6394680; }
         }
 
-        /* Header */
         header {
             background: linear-gradient(160deg, #1a0505 0%, #0a0a0a 70%);
-            padding: 50px 20px 30px;
+            padding: 45px 20px 28px;
             text-align: center;
             border-bottom: 4px solid #e63946;
             position: relative;
@@ -42,20 +44,20 @@
 
         .server-logo {
             display: inline-block;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 900;
             letter-spacing: 3px;
             color: #e63946;
             background: #1a1a1a;
-            padding: 6px 16px;
+            padding: 5px 14px;
             border-radius: 6px;
             border: 2px solid #e63946;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
             text-transform: uppercase;
         }
 
         header h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 900;
             color: #e63946;
             letter-spacing: -1.5px;
@@ -64,22 +66,21 @@
         }
 
         header .tag {
-            margin-top: 10px;
+            margin-top: 8px;
             color: #aaa;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
-        /* Language switch */
         .lang-switch {
             position: absolute;
-            top: 18px;
-            right: 18px;
+            top: 16px;
+            right: 16px;
             background: #141414;
             border: 2px solid #e63946;
             border-radius: 30px;
-            padding: 6px 14px;
+            padding: 5px 13px;
             font-weight: 800;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
             color: #e63946;
             transition: all 0.3s ease;
@@ -91,13 +92,12 @@
             color: #0a0a0a;
         }
 
-        /* Navigation */
         nav {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 8px;
-            padding: 20px 15px;
+            gap: 7px;
+            padding: 16px 12px;
             background: #0f0f0f;
             border-bottom: 1px solid #222;
             position: sticky;
@@ -109,9 +109,9 @@
             background: #1a1a1a;
             border: 1px solid #333;
             color: #ccc;
-            padding: 9px 16px;
+            padding: 8px 14px;
             border-radius: 8px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.25s ease;
@@ -124,16 +124,15 @@
             border-color: #e63946;
         }
 
-        /* Content */
         .container {
             max-width: 820px;
             margin: 0 auto;
-            padding: 30px 20px 70px;
+            padding: 28px 18px 60px;
         }
 
         .section {
             display: none;
-            animation: fadeIn 0.45s ease;
+            animation: fadeIn 0.4s ease;
         }
 
         .section.active {
@@ -143,25 +142,25 @@
         .card {
             background: #131313;
             border-radius: 14px;
-            padding: 28px 26px;
-            margin-bottom: 22px;
+            padding: 26px 24px;
+            margin-bottom: 20px;
             border-left: 5px solid #e63946;
             box-shadow: 0 6px 25px rgba(0,0,0,0.5);
         }
 
         .card h2 {
             color: #e63946;
-            font-size: 1.45rem;
+            font-size: 1.4rem;
             font-weight: 800;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.5px;
         }
 
         .card p {
             color: #e0e0e0;
-            font-size: 1.12rem;
-            margin-bottom: 13px;
+            font-size: 1.08rem;
+            margin-bottom: 12px;
         }
 
         .highlight {
@@ -169,49 +168,85 @@
             font-weight: 700;
         }
 
-        /* Specs grid */
         .specs-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin-top: 10px;
+            gap: 12px;
+            margin-top: 12px;
         }
 
         .spec-box {
             background: #1a1a1a;
             border: 1px solid #333;
             border-radius: 10px;
-            padding: 16px;
+            padding: 14px;
             text-align: center;
         }
 
         .spec-box .label {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #888;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         .spec-box .value {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #ff6b6b;
         }
 
-        /* Social links */
+        .cmd-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 0.98rem;
+        }
+
+        .cmd-table th {
+            text-align: left;
+            padding: 10px 8px;
+            background: #1a1a1a;
+            color: #e63946;
+            border-bottom: 2px solid #e63946;
+        }
+
+        .cmd-table td {
+            padding: 9px 8px;
+            border-bottom: 1px solid #2a2a2a;
+            color: #ddd;
+        }
+
+        .cmd-table tr:hover td {
+            background: #1a1a1a;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .badge-free { background: #1a3a1a; color: #4ade80; }
+        .badge-vote { background: #3a2a1a; color: #fbbf24; }
+        .badge-rank { background: #2a1a3a; color: #c084fc; }
+        .badge-both { background: #3a1a1a; color: #f87171; }
+
         .social-links {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 11px;
             margin-top: 8px;
         }
 
         .social-links a {
             display: block;
             color: #ff6b6b;
-            font-size: 1.15rem;
+            font-size: 1.12rem;
             font-weight: 600;
             text-decoration: none;
-            padding: 12px 18px;
+            padding: 11px 16px;
             background: #1a1a1a;
             border-radius: 8px;
             border: 1px solid #333;
@@ -222,26 +257,25 @@
             background: #e63946;
             color: white;
             border-color: #e63946;
-            transform: translateX(6px);
+            transform: translateX(5px);
         }
 
         footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 28px 20px;
             color: #555;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             border-top: 1px solid #1f1f1f;
         }
 
-        /* Responsive */
         @media (max-width: 600px) {
-            header h1 { font-size: 2.6rem; }
+            header h1 { font-size: 2.5rem; }
             .specs-grid { grid-template-columns: 1fr; }
-            nav button { padding: 8px 12px; font-size: 0.88rem; }
-            .card { padding: 22px 18px; }
+            nav button { padding: 7px 11px; font-size: 0.84rem; }
+            .card { padding: 20px 16px; }
+            .cmd-table { font-size: 0.9rem; }
         }
 
-        /* Language system */
         .lang-en { display: none; }
         body.en .lang-es { display: none; }
         body.en .lang-en { display: block; }
@@ -258,146 +292,142 @@
         <div class="server-logo">8b8t.me</div>
         <h1>arjebn</h1>
         <div class="tag">
-            <span class="lang-es">Jugador casual y activo en 8b8t.me</span>
-            <span class="lang-en">Casual & active player on 8b8t.me</span>
+            <span class="lang-es">Creador de Oreva · Clan Outlaws</span>
+            <span class="lang-en">Creator of Oreva · Outlaws Clan</span>
         </div>
     </header>
 
-    <!-- Menú de secciones -->
     <nav>
-        <button class="active" onclick="showSection('inicio')">
-            <span class="lang-es">Inicio</span>
-            <span class="lang-en">Home</span>
+        <button class="active" onclick="showSection('inicio', this)">
+            <span class="lang-es">Inicio</span><span class="lang-en">Home</span>
         </button>
-        <button onclick="showSection('sobre-mi')">
-            <span class="lang-es">Sobre mí</span>
-            <span class="lang-en">About</span>
+        <button onclick="showSection('sobre-mi', this)">
+            <span class="lang-es">Sobre mí</span><span class="lang-en">About</span>
         </button>
-        <button onclick="showSection('actividad')">
-            <span class="lang-es">Actividad</span>
-            <span class="lang-en">Activity</span>
+        <button onclick="showSection('actividad', this)">
+            <span class="lang-es">Actividad</span><span class="lang-en">Activity</span>
         </button>
-        <button onclick="showSection('servidor')">
-            <span class="lang-es">Servidor</span>
-            <span class="lang-en">Server</span>
+        <button onclick="showSection('servidor', this)">
+            <span class="lang-es">Servidor</span><span class="lang-en">Server</span>
         </button>
-        <button onclick="showSection('specs')">
-            <span class="lang-es">Especs</span>
-            <span class="lang-en">Specs</span>
+        <button onclick="showSection('comandos', this)">
+            <span class="lang-es">Comandos</span><span class="lang-en">Commands</span>
         </button>
-        <button onclick="showSection('redes')">
-            <span class="lang-es">Redes</span>
-            <span class="lang-en">Socials</span>
+        <button onclick="showSection('specs', this)">
+            <span class="lang-es">Especs</span><span class="lang-en">Specs</span>
+        </button>
+        <button onclick="showSection('redes', this)">
+            <span class="lang-es">Redes</span><span class="lang-en">Socials</span>
         </button>
     </nav>
 
     <div class="container">
 
-        <!-- SECCIÓN: INICIO -->
+        <!-- INICIO -->
         <div id="inicio" class="section active">
             <div class="card">
-                <h2>
-                    <span class="lang-es">Bienvenido</span>
-                    <span class="lang-en">Welcome</span>
-                </h2>
+                <h2><span class="lang-es">Bienvenido</span><span class="lang-en">Welcome</span></h2>
                 <p class="lang-es">
-                    Esta es mi página personal como jugador de <span class="highlight">8b8t.me</span>. 
-                    Aquí puedes conocer un poco sobre mí, mi actividad en el servidor y algunas 
-                    cosas interesantes de este mundo anárquico.
+                    Esta es la página de <span class="highlight">arjebn</span>, jugador activo de 
+                    <span class="highlight">8b8t.me</span> y creador de <span class="highlight">Oreva</span>, 
+                    el bot de kits del clan <span class="highlight">Outlaws</span>.
+                </p>
+                <p class="lang-es">
+                    Aquí encontrarás información sobre mí, mi proyecto Oreva, el servidor 8b8t, 
+                    lista de comandos, especificaciones técnicas y mis redes.
                 </p>
                 <p class="lang-en">
-                    This is my personal page as a player of <span class="highlight">8b8t.me</span>. 
-                    Here you can learn a bit about me, my activity on the server and some 
-                    interesting things about this anarchy world.
+                    This is the page of <span class="highlight">arjebn</span>, active player on 
+                    <span class="highlight">8b8t.me</span> and creator of <span class="highlight">Oreva</span>, 
+                    the kit bot of the <span class="highlight">Outlaws</span> clan.
+                </p>
+                <p class="lang-en">
+                    Here you will find information about me, my Oreva project, the 8b8t server, 
+                    command list, technical specs and my socials.
                 </p>
             </div>
         </div>
 
-        <!-- SECCIÓN: SOBRE MÍ -->
+        <!-- SOBRE MÍ -->
         <div id="sobre-mi" class="section">
             <div class="card">
-                <h2>
-                    <span class="lang-es">Sobre mí</span>
-                    <span class="lang-en">About me</span>
-                </h2>
+                <h2><span class="lang-es">Sobre mí</span><span class="lang-en">About me</span></h2>
                 <p class="lang-es">
                     Soy un jugador <span class="highlight">casual pero muy activo</span> en el servidor anárquico 
                     <span class="highlight">8b8t.me</span>. Llevo más de <span class="highlight">400 horas</span> 
-                    explorando, construyendo y ayudando a otros jugadores en este mundo caótico.
+                    explorando, construyendo y ayudando a otros jugadores.
                 </p>
                 <p class="lang-es">
-                    No me considero un jugador hardcore de PvP ni un constructor profesional de bases gigantes, 
-                    pero disfruto mucho del día a día del servidor: encontrar gente nueva, compartir recursos 
-                    y formar parte de la comunidad.
+                    No soy un hardcore PvP ni un builder profesional de bases gigantes. 
+                    Mi estilo es más relajado: me gusta estar en el servidor, charlar, 
+                    entregar kits y ver cómo los nuevos jugadores aprenden a sobrevivir 
+                    en un mundo sin reglas.
                 </p>
                 <p class="lang-es">
-                    Mi forma de jugar es bastante relajada. Me gusta estar en el servidor, 
-                    charlar, entregar kits y ver cómo los jugadores nuevos van aprendiendo 
-                    a sobrevivir en un lugar donde no hay reglas.
+                    Formo parte del clan <span class="highlight">Outlaws</span> y mi mayor aporte 
+                    ha sido crear <span class="highlight">Oreva</span>, un bot exclusivo para 
+                    repartir kits de forma organizada.
                 </p>
-
                 <p class="lang-en">
                     I'm a <span class="highlight">casual but very active</span> player on the anarchy server 
                     <span class="highlight">8b8t.me</span>. I have more than <span class="highlight">400 hours</span> 
-                    exploring, building and helping other players in this chaotic world.
+                    exploring, building and helping other players.
                 </p>
                 <p class="lang-en">
-                    I don't consider myself a hardcore PvP player or a professional base builder, 
-                    but I really enjoy the daily life of the server: meeting new people, sharing resources 
-                    and being part of the community.
+                    I'm not a hardcore PvP player or a professional giant base builder. 
+                    My style is more relaxed: I like being on the server, chatting, 
+                    giving kits and watching new players learn to survive 
+                    in a world with no rules.
                 </p>
                 <p class="lang-en">
-                    My way of playing is quite relaxed. I like being on the server, 
-                    chatting, giving kits and watching how new players learn 
-                    to survive in a place where there are no rules.
+                    I'm part of the <span class="highlight">Outlaws</span> clan and my biggest contribution 
+                    has been creating <span class="highlight">Oreva</span>, an exclusive bot to 
+                    distribute kits in an organized way.
                 </p>
             </div>
         </div>
 
-        <!-- SECCIÓN: ACTIVIDAD -->
+        <!-- ACTIVIDAD -->
         <div id="actividad" class="section">
             <div class="card">
-                <h2>
-                    <span class="lang-es">Mi actividad</span>
-                    <span class="lang-en">My activity</span>
-                </h2>
+                <h2><span class="lang-es">Mi actividad & Oreva</span><span class="lang-en">My activity & Oreva</span></h2>
                 <p class="lang-es">
-                    Mi proyecto más grande se llama <span class="highlight">Oreva</span>, 
-                    un bot exclusivo que creé para entregar kits a mi clan 
-                    <span class="highlight">Outlaws</span>.
+                    Mi proyecto más grande se llama <span class="highlight">Oreva</span> 
+                    (también conocido como Oreva_bot). Es un bot exclusivo que desarrollé 
+                    para entregar kits a los miembros del clan <span class="highlight">Outlaws</span> 
+                    y a jugadores nuevos.
                 </p>
                 <p class="lang-es">
-                    La mayor parte del tiempo me dedico a entregar kits a los nuevos jugadores 
-                    para ayudarlos a empezar en el servidor y que no mueran en los primeros minutos.
+                    La idea de Oreva nació de la necesidad de ayudar a la gente que recién llega 
+                    al servidor y no tiene nada. En lugar de dejarlos morir en spawn, 
+                    el bot les da un kit básico para que puedan empezar.
                 </p>
                 <p class="lang-es">
-                    También me gusta explorar, conocer gente y formar parte de la comunidad 
-                    de forma positiva dentro de un servidor donde normalmente reina el caos.
-                </p>
-
-                <p class="lang-en">
-                    My biggest project is called <span class="highlight">Oreva</span>, 
-                    an exclusive bot I created to deliver kits to my clan 
-                    <span class="highlight">Outlaws</span>.
+                    La mayor parte de mi tiempo en 8b8t lo dedico a mantener Oreva funcionando, 
+                    entregar kits y apoyar a la comunidad de forma positiva dentro del caos.
                 </p>
                 <p class="lang-en">
-                    Most of the time I focus on giving kits to new players 
-                    so they can start on the server and not die in the first few minutes.
+                    My biggest project is called <span class="highlight">Oreva</span> 
+                    (also known as Oreva_bot). It is an exclusive bot I developed 
+                    to deliver kits to members of the <span class="highlight">Outlaws</span> clan 
+                    and to new players.
                 </p>
                 <p class="lang-en">
-                    I also like exploring, meeting people and being part of the community 
-                    in a positive way inside a server where chaos usually rules.
+                    The idea of Oreva was born from the need to help people who just arrived 
+                    on the server and have nothing. Instead of letting them die at spawn, 
+                    the bot gives them a basic kit so they can start.
+                </p>
+                <p class="lang-en">
+                    Most of my time on 8b8t is spent keeping Oreva running, 
+                    delivering kits and supporting the community in a positive way inside the chaos.
                 </p>
             </div>
         </div>
 
-        <!-- SECCIÓN: SERVIDOR -->
+        <!-- SERVIDOR -->
         <div id="servidor" class="section">
             <div class="card">
-                <h2>
-                    <span class="lang-es">Historia de 8b8t</span>
-                    <span class="lang-en">History of 8b8t</span>
-                </h2>
+                <h2><span class="lang-es">Historia de 8b8t</span><span class="lang-en">History of 8b8t</span></h2>
                 <p class="lang-es">
                     8b8t es uno de los servidores de anarquía más antiguos que siguen activos. 
                     Nació en <span class="highlight">diciembre de 2016</span> como 
@@ -411,26 +441,20 @@
             </div>
 
             <div class="card">
-                <h2>
-                    <span class="lang-es">¿Por qué es especial?</span>
-                    <span class="lang-en">Why is it special?</span>
-                </h2>
+                <h2><span class="lang-es">¿Por qué es especial?</span><span class="lang-en">Why is it special?</span></h2>
                 <p class="lang-es">
-                    A diferencia de servidores como 2b2t, 8b8t permite comandos útiles como 
+                    A diferencia de 2b2t, 8b8t permite comandos útiles como 
                     <span class="highlight">/home</span> y <span class="highlight">/tpa</span>, 
                     lo que hace la experiencia más jugable sin perder el espíritu anárquico.
                 </p>
                 <p class="lang-es">
-                    Tiene una comunidad muy activa, muchos clanes, bases enormes, 
-                    y un mapa que lleva más de 6 años sin reseteo.
+                    Tiene comunidad activa, muchos clanes, bases enormes y un mapa 
+                    de más de 6 años sin reseteo. Es de los pocos que se ha mantenido estable tanto tiempo.
                 </p>
             </div>
 
             <div class="card">
-                <h2>
-                    <span class="lang-es">Datos interesantes</span>
-                    <span class="lang-en">Interesting facts</span>
-                </h2>
+                <h2><span class="lang-es">Datos interesantes</span><span class="lang-en">Interesting facts</span></h2>
                 <p class="lang-es">
                     • Activo desde <span class="highlight">2016</span> (casi 10 años)<br>
                     • Mapa actual de más de <span class="highlight">9 TB</span><br>
@@ -441,13 +465,46 @@
             </div>
         </div>
 
-        <!-- SECCIÓN: ESPECIFICACIONES -->
+        <!-- COMANDOS -->
+        <div id="comandos" class="section">
+            <div class="card">
+                <h2><span class="lang-es">Lista de comandos</span><span class="lang-en">Command list</span></h2>
+                <p class="lang-es">
+                    Algunos comandos son gratis, otros requieren votar o tener rango de la tienda.
+                </p>
+                <p class="lang-en">
+                    Some commands are free, others require voting or having a shop rank.
+                </p>
+
+                <table class="cmd-table">
+                    <thead>
+                        <tr>
+                            <th>Comando</th>
+                            <th>Requisito</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>/tpa · /tpahere · /tpayes · /tpano</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/home · /sethome · /delhome · /back</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/hotspot · /skin · /kill · /msg</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/ignore · /unignore · /ignorelist</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/joindate · /lastseen · /worldstats</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/tpsinfo · /dps · /togglechat</td><td><span class="badge badge-free">Free</span></td></tr>
+                        <tr><td>/announcements</td><td><span class="badge badge-both">Voto / Rank</span></td></tr>
+                        <tr><td>/cosmetics nick · /cosmetics item</td><td><span class="badge badge-both">Voto / Rank</span></td></tr>
+                        <tr><td>/echest · /rename · /toggleprefix</td><td><span class="badge badge-rank">Rank</span></td></tr>
+                        <tr><td>/chatbridge</td><td><span class="badge badge-rank">Rank</span></td></tr>
+                        <tr><td>/hotspot create</td><td><span class="badge badge-rank">Ultra Rank</span></td></tr>
+                        <tr><td>/cosmetics title</td><td><span class="badge badge-rank">Custom Rank</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SPECS -->
         <div id="specs" class="section">
             <div class="card">
-                <h2>
-                    <span class="lang-es">Especificaciones del servidor</span>
-                    <span class="lang-en">Server specifications</span>
-                </h2>
+                <h2><span class="lang-es">Especificaciones del servidor</span><span class="lang-en">Server specifications</span></h2>
                 <p class="lang-es">
                     8b8t corre en hardware de alto rendimiento para soportar un mapa enorme 
                     y cientos de jugadores al mismo tiempo.
@@ -471,8 +528,8 @@
                         <div class="value">Edmonton, Canadá</div>
                     </div>
                     <div class="spec-box">
-                        <div class="label">Tipo de servidor</div>
-                        <div class="value">Anarchy / Non-vanilla</div>
+                        <div class="label">Tipo</div>
+                        <div class="value">Anarchy Non-vanilla</div>
                     </div>
                     <div class="spec-box">
                         <div class="label">Mapa actual</div>
@@ -482,14 +539,10 @@
             </div>
         </div>
 
-        <!-- SECCIÓN: REDES -->
+        <!-- REDES -->
         <div id="redes" class="section">
             <div class="card">
-                <h2>
-                    <span class="lang-es">Redes</span>
-                    <span class="lang-en">Socials</span>
-                </h2>
-
+                <h2><span class="lang-es">Redes</span><span class="lang-en">Socials</span></h2>
                 <div class="social-links">
                     <a href="https://www.tiktok.com/@t4ngens3?_r=1&_t=ZS-99w4GledkCD" target="_blank">TikTok</a>
                     <a href="https://discord.gg/zGjE4BQna" target="_blank">Discord</a>
@@ -501,27 +554,16 @@
     </div>
 
     <footer>
-        <span class="lang-es">Hecho por arjebn · 8b8t</span>
-        <span class="lang-en">Made by arjebn · 8b8t</span>
+        <span class="lang-es">Hecho por arjebn · Oreva · 8b8t</span>
+        <span class="lang-en">Made by arjebn · Oreva · 8b8t</span>
     </footer>
 
     <script>
-        function showSection(id) {
-            // Quitar active de todas las secciones
-            document.querySelectorAll('.section').forEach(sec => {
-                sec.classList.remove('active');
-            });
-
-            // Quitar active de todos los botones
-            document.querySelectorAll('nav button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            // Activar la sección
+        function showSection(id, btn) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
             document.getElementById(id).classList.add('active');
-
-            // Activar el botón correspondiente
-            event.target.closest('button').classList.add('active');
+            if (btn) btn.classList.add('active');
         }
 
         function toggleLanguage() {
