@@ -4,14 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO -->
-    <title>arjebn | Oreva | 8b8t</title>
-    <meta name="description" content="Página oficial de arjebn, creador de Oreva (bot de kits) en 8b8t.me. Jugador activo del clan Outlaws. Información del servidor, comandos, specs y más.">
-    <meta name="keywords" content="Oreva, OrevaCORP, Orevaweb, Oreva bot, arjebn, 8b8t, 8b8t.me, Outlaws, kits 8b8t, anarchy server">
+    <title>arjebn | oreva_bot | 8b8t</title>
+    <meta name="description" content="Página de arjebn, creador de oreva_bot en 8b8t.me. Clan Outlaws. Cómo unirse, comandos, specs y más.">
+    <meta name="keywords" content="oreva_bot, arjebn, 8b8t, 8b8t.me, Outlaws, kits 8b8t">
     <meta name="author" content="arjebn">
-    <meta property="og:title" content="arjebn | Oreva | 8b8t">
-    <meta property="og:description" content="Creador de Oreva, el bot de kits del clan Outlaws en 8b8t.me">
-    <meta property="og:type" content="website">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -168,6 +164,41 @@
             font-weight: 700;
         }
 
+        .ip-box {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .ip-box code {
+            font-size: 1.15rem;
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+
+        .copy-btn {
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: #ff4d5a;
+        }
+
         .specs-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -229,18 +260,17 @@
         }
 
         .badge-free { background: #1a3a1a; color: #4ade80; }
-        .badge-vote { background: #3a2a1a; color: #fbbf24; }
-        .badge-rank { background: #2a1a3a; color: #c084fc; }
         .badge-both { background: #3a1a1a; color: #f87171; }
+        .badge-rank { background: #2a1a3a; color: #c084fc; }
 
-        .social-links {
+        .social-links, .useful-links {
             display: flex;
             flex-direction: column;
             gap: 11px;
             margin-top: 8px;
         }
 
-        .social-links a {
+        .social-links a, .useful-links a {
             display: block;
             color: #ff6b6b;
             font-size: 1.12rem;
@@ -253,7 +283,7 @@
             transition: all 0.25s ease;
         }
 
-        .social-links a:hover {
+        .social-links a:hover, .useful-links a:hover {
             background: #e63946;
             color: white;
             border-color: #e63946;
@@ -292,8 +322,8 @@
         <div class="server-logo">8b8t.me</div>
         <h1>arjebn</h1>
         <div class="tag">
-            <span class="lang-es">Creador de Oreva · Clan Outlaws</span>
-            <span class="lang-en">Creator of Oreva · Outlaws Clan</span>
+            <span class="lang-es">Creador de oreva_bot · Clan Outlaws</span>
+            <span class="lang-en">Creator of oreva_bot · Outlaws Clan</span>
         </div>
     </header>
 
@@ -310,14 +340,17 @@
         <button onclick="showSection('servidor', this)">
             <span class="lang-es">Servidor</span><span class="lang-en">Server</span>
         </button>
+        <button onclick="showSection('unirse', this)">
+            <span class="lang-es">Unirse</span><span class="lang-en">Join</span>
+        </button>
         <button onclick="showSection('comandos', this)">
             <span class="lang-es">Comandos</span><span class="lang-en">Commands</span>
         </button>
         <button onclick="showSection('specs', this)">
             <span class="lang-es">Especs</span><span class="lang-en">Specs</span>
         </button>
-        <button onclick="showSection('redes', this)">
-            <span class="lang-es">Redes</span><span class="lang-en">Socials</span>
+        <button onclick="showSection('enlaces', this)">
+            <span class="lang-es">Enlaces</span><span class="lang-en">Links</span>
         </button>
     </nav>
 
@@ -329,21 +362,21 @@
                 <h2><span class="lang-es">Bienvenido</span><span class="lang-en">Welcome</span></h2>
                 <p class="lang-es">
                     Esta es la página de <span class="highlight">arjebn</span>, jugador activo de 
-                    <span class="highlight">8b8t.me</span> y creador de <span class="highlight">Oreva</span>, 
+                    <span class="highlight">8b8t.me</span> y creador de <span class="highlight">oreva_bot</span>, 
                     el bot de kits del clan <span class="highlight">Outlaws</span>.
                 </p>
                 <p class="lang-es">
-                    Aquí encontrarás información sobre mí, mi proyecto Oreva, el servidor 8b8t, 
-                    lista de comandos, especificaciones técnicas y mis redes.
+                    Aquí encontrarás información sobre mí, oreva_bot, el servidor, cómo unirte, 
+                    comandos, especificaciones y enlaces útiles.
                 </p>
                 <p class="lang-en">
                     This is the page of <span class="highlight">arjebn</span>, active player on 
-                    <span class="highlight">8b8t.me</span> and creator of <span class="highlight">Oreva</span>, 
+                    <span class="highlight">8b8t.me</span> and creator of <span class="highlight">oreva_bot</span>, 
                     the kit bot of the <span class="highlight">Outlaws</span> clan.
                 </p>
                 <p class="lang-en">
-                    Here you will find information about me, my Oreva project, the 8b8t server, 
-                    command list, technical specs and my socials.
+                    Here you will find information about me, oreva_bot, the server, how to join, 
+                    commands, specs and useful links.
                 </p>
             </div>
         </div>
@@ -365,8 +398,7 @@
                 </p>
                 <p class="lang-es">
                     Formo parte del clan <span class="highlight">Outlaws</span> y mi mayor aporte 
-                    ha sido crear <span class="highlight">Oreva</span>, un bot exclusivo para 
-                    repartir kits de forma organizada.
+                    ha sido crear <span class="highlight">oreva_bot</span>.
                 </p>
                 <p class="lang-en">
                     I'm a <span class="highlight">casual but very active</span> player on the anarchy server 
@@ -381,8 +413,7 @@
                 </p>
                 <p class="lang-en">
                     I'm part of the <span class="highlight">Outlaws</span> clan and my biggest contribution 
-                    has been creating <span class="highlight">Oreva</span>, an exclusive bot to 
-                    distribute kits in an organized way.
+                    has been creating <span class="highlight">oreva_bot</span>.
                 </p>
             </div>
         </div>
@@ -390,36 +421,34 @@
         <!-- ACTIVIDAD -->
         <div id="actividad" class="section">
             <div class="card">
-                <h2><span class="lang-es">Mi actividad & Oreva</span><span class="lang-en">My activity & Oreva</span></h2>
+                <h2><span class="lang-es">Mi actividad & oreva_bot</span><span class="lang-en">My activity & oreva_bot</span></h2>
                 <p class="lang-es">
-                    Mi proyecto más grande se llama <span class="highlight">Oreva</span> 
-                    (también conocido como Oreva_bot). Es un bot exclusivo que desarrollé 
-                    para entregar kits a los miembros del clan <span class="highlight">Outlaws</span> 
-                    y a jugadores nuevos.
+                    Mi proyecto más grande se llama <span class="highlight">oreva_bot</span>. 
+                    Es un bot exclusivo que desarrollé para entregar kits a los miembros del clan 
+                    <span class="highlight">Outlaws</span> y a jugadores nuevos.
                 </p>
                 <p class="lang-es">
-                    La idea de Oreva nació de la necesidad de ayudar a la gente que recién llega 
+                    La idea de oreva_bot nació de la necesidad de ayudar a la gente que recién llega 
                     al servidor y no tiene nada. En lugar de dejarlos morir en spawn, 
                     el bot les da un kit básico para que puedan empezar.
                 </p>
                 <p class="lang-es">
-                    La mayor parte de mi tiempo en 8b8t lo dedico a mantener Oreva funcionando, 
-                    entregar kits y apoyar a la comunidad de forma positiva dentro del caos.
+                    La mayor parte de mi tiempo en 8b8t lo dedico a mantener oreva_bot funcionando, 
+                    entregar kits y apoyar a la comunidad de forma positiva.
                 </p>
                 <p class="lang-en">
-                    My biggest project is called <span class="highlight">Oreva</span> 
-                    (also known as Oreva_bot). It is an exclusive bot I developed 
-                    to deliver kits to members of the <span class="highlight">Outlaws</span> clan 
-                    and to new players.
+                    My biggest project is called <span class="highlight">oreva_bot</span>. 
+                    It is an exclusive bot I developed to deliver kits to members of the 
+                    <span class="highlight">Outlaws</span> clan and to new players.
                 </p>
                 <p class="lang-en">
-                    The idea of Oreva was born from the need to help people who just arrived 
+                    The idea of oreva_bot was born from the need to help people who just arrived 
                     on the server and have nothing. Instead of letting them die at spawn, 
                     the bot gives them a basic kit so they can start.
                 </p>
                 <p class="lang-en">
-                    Most of my time on 8b8t is spent keeping Oreva running, 
-                    delivering kits and supporting the community in a positive way inside the chaos.
+                    Most of my time on 8b8t is spent keeping oreva_bot running, 
+                    delivering kits and supporting the community in a positive way.
                 </p>
             </div>
         </div>
@@ -449,18 +478,47 @@
                 </p>
                 <p class="lang-es">
                     Tiene comunidad activa, muchos clanes, bases enormes y un mapa 
-                    de más de 6 años sin reseteo. Es de los pocos que se ha mantenido estable tanto tiempo.
+                    de más de 6 años sin reseteo.
                 </p>
             </div>
+        </div>
 
+        <!-- UNIRSE -->
+        <div id="unirse" class="section">
             <div class="card">
-                <h2><span class="lang-es">Datos interesantes</span><span class="lang-en">Interesting facts</span></h2>
-                <p class="lang-es">
-                    • Activo desde <span class="highlight">2016</span> (casi 10 años)<br>
-                    • Mapa actual de más de <span class="highlight">9 TB</span><br>
-                    • Más de <span class="highlight">400.000</span> jugadores únicos<br>
-                    • Soporta desde la versión <span class="highlight">1.7</span> hasta las más nuevas<br>
-                    • Disponible en Java y Bedrock
+                <h2><span class="lang-es">Cómo unirse a 8b8t</span><span class="lang-en">How to join 8b8t</span></h2>
+                
+                <p class="lang-es"><strong>Java Edition:</strong></p>
+                <div class="ip-box">
+                    <code>8b8t.me</code>
+                    <button class="copy-btn" onclick="copyIP('8b8t.me')">Copiar IP</button>
+                </div>
+
+                <p class="lang-es" style="margin-top:18px;"><strong>Bedrock Edition:</strong></p>
+                <div class="ip-box">
+                    <code>br.8b8t.me</code>
+                    <button class="copy-btn" onclick="copyIP('br.8b8t.me')">Copiar IP</button>
+                </div>
+                <p class="lang-es" style="font-size:0.95rem; color:#aaa;">Puerto: 19132</p>
+
+                <p class="lang-en"><strong>Java Edition:</strong></p>
+                <div class="ip-box lang-en">
+                    <code>8b8t.me</code>
+                    <button class="copy-btn" onclick="copyIP('8b8t.me')">Copy IP</button>
+                </div>
+
+                <p class="lang-en" style="margin-top:18px;"><strong>Bedrock Edition:</strong></p>
+                <div class="ip-box lang-en">
+                    <code>br.8b8t.me</code>
+                    <button class="copy-btn" onclick="copyIP('br.8b8t.me')">Copy IP</button>
+                </div>
+                <p class="lang-en" style="font-size:0.95rem; color:#aaa;">Port: 19132</p>
+
+                <p class="lang-es" style="margin-top:20px;">
+                    Versión recomendada: la más reciente. El servidor soporta desde la 1.7 hasta las versiones actuales.
+                </p>
+                <p class="lang-en" style="margin-top:20px;">
+                    Recommended version: the latest one. The server supports from 1.7 to current versions.
                 </p>
             </div>
         </div>
@@ -469,12 +527,8 @@
         <div id="comandos" class="section">
             <div class="card">
                 <h2><span class="lang-es">Lista de comandos</span><span class="lang-en">Command list</span></h2>
-                <p class="lang-es">
-                    Algunos comandos son gratis, otros requieren votar o tener rango de la tienda.
-                </p>
-                <p class="lang-en">
-                    Some commands are free, others require voting or having a shop rank.
-                </p>
+                <p class="lang-es">Algunos comandos son gratis, otros requieren votar o tener rango.</p>
+                <p class="lang-en">Some commands are free, others require voting or having a rank.</p>
 
                 <table class="cmd-table">
                     <thead>
@@ -539,23 +593,39 @@
             </div>
         </div>
 
-        <!-- REDES -->
-        <div id="redes" class="section">
+        <!-- ENLACES -->
+        <div id="enlaces" class="section">
             <div class="card">
-                <h2><span class="lang-es">Redes</span><span class="lang-en">Socials</span></h2>
-                <div class="social-links">
+                <h2><span class="lang-es">Enlaces útiles</span><span class="lang-en">Useful links</span></h2>
+                <div class="useful-links">
+                    <a href="https://votefor.8b8t.me" target="_blank">Votar por 8b8t</a>
+                    <a href="https://shop.8b8t.me" target="_blank">Tienda de rangos</a>
                     <a href="https://www.tiktok.com/@t4ngens3?_r=1&_t=ZS-99w4GledkCD" target="_blank">TikTok</a>
                     <a href="https://discord.gg/zGjE4BQna" target="_blank">Discord</a>
                     <a href="https://x.com/t4ngenders" target="_blank">Twitter / X</a>
                 </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></h2>
+                <p class="lang-es">
+                    Si tienes algún problema con <span class="highlight">oreva_bot</span>, 
+                    quieres reportar algo o simplemente contactarme, 
+                    puedes escribirme por Discord o por mis redes.
+                </p>
+                <p class="lang-en">
+                    If you have any problem with <span class="highlight">oreva_bot</span>, 
+                    want to report something or just contact me, 
+                    you can write to me on Discord or through my socials.
+                </p>
             </div>
         </div>
 
     </div>
 
     <footer>
-        <span class="lang-es">Hecho por arjebn · Oreva · 8b8t</span>
-        <span class="lang-en">Made by arjebn · Oreva · 8b8t</span>
+        <span class="lang-es">Hecho por arjebn · oreva_bot · 8b8t</span>
+        <span class="lang-en">Made by arjebn · oreva_bot · 8b8t</span>
     </footer>
 
     <script>
@@ -569,6 +639,12 @@
         function toggleLanguage() {
             document.body.classList.toggle('en');
             localStorage.setItem('lang', document.body.classList.contains('en') ? 'en' : 'es');
+        }
+
+        function copyIP(ip) {
+            navigator.clipboard.writeText(ip).then(() => {
+                alert('IP copiada: ' + ip);
+            });
         }
 
         if (localStorage.getItem('lang') === 'en') {
